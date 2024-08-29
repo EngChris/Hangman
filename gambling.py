@@ -43,7 +43,10 @@ def check_guess(word, guessed_letters, guess):
         return False
 
 def play_game():
-    word = "john"
+    f = open("words.txt", "rt")
+    #print(f.read())
+    word = f.read()
+    f.close()
     guessed_letters = [] 
     tries =7
     
