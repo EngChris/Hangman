@@ -3,3 +3,8 @@ banana
 lemon
 apple
 grape
+avocado
+plum
+mango
+cherry
+pineapple
