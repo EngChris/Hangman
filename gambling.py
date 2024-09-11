@@ -44,14 +44,19 @@ def check_guess(word, guessed_letters, guess):
     else:
         print("Incorrect guess.")
         return False
-
-def play_game():
-    f = open("words.txt", "rt")
-    #print(f.read())
-    data = f.read()
+def print_random(file_name):
+    f= open(file_name, "rt")
+    data= f.read()
     rand = data.split("\n")
     word= random.choice(rand)
-    f.close()
+    #print(rand)
+    return word 
+    
+def play_game():
+    #f = open("words.txt", "rt")
+    a= "words.txt"
+    word = print_random(a)
+    #f.close()
     guessed_letters = [] 
     tries =7
     
@@ -75,11 +80,19 @@ def play_game():
     if tries == 0:
         print("Sorry, you ran out of tries. The word was:", word)
 
-play_game()
 
-def print_random(file_name):
-    f= open(file_name)
-    data= f.read()
-    word = data.split("\n")
-    rand= random.choice(word)
-    print(rand)
+while True:
+        play_game()
+        
+        user_input = input("Do you want to run again? yes or no  ")
+        if(user_input != "yes"):
+            print("Bye Bye! See you again")
+            break
+
+
+
+
+
+
+    
+    
